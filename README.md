@@ -1,2 +1,2 @@
 # cookie
-its all abour cookie
+its all about cookie
