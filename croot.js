@@ -37,3 +37,18 @@ export function getCookie(cname) {
   }
   return "";
 }
+
+/**
+ * Sets a cookie with a specified expiration time and domain.
+ *
+ * @param {String} cname - The name of the cookie.
+ * @param {String} cvalue - The value of the cookie.
+ * @param {String} domain - The domain where the cookie is valid.
+ * @param {Number} exhour - The number of hours until the cookie expires.
+ */
+export const setCookieWithExpireHourSubDomain = (cname, cvalue, domain, exhour) => {
+  const d = new Date();
+  d.setTime(d.getTime() + (exhour * 60 * 60 * 1000));
+  const expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";domain="+ domain +";path=/";
+}
